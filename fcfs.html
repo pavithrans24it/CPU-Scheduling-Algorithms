@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCFS - CPU Scheduling Algorithms</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/algorithm.css">
+</head>
+<body>
+    <header>
+        <h1>CPU Scheduling Algorithms</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="fcfs.html">FCFS</a></li>
+                <li><a href="sjf.html">SJF</a></li>
+                <li><a href="priority.html">Priority Scheduling</a></li>
+                <li><a href="roundrobin.html">Round Robin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="algorithm-container">
+        <div class="algorithm-section">
+            <h2>First Come First Serve (FCFS) Scheduling</h2>
+            
+            <div class="explanation-box">
+                <h3>Algorithm Explanation</h3>
+                <p>First Come First Serve (FCFS) is the simplest CPU scheduling algorithm. Processes are executed in the order they arrive in the ready queue.</p>
+                <p><strong>Key Characteristics:</strong></p>
+                <ul>
+                    <li>Non-preemptive: A process cannot be interrupted once it starts</li>
+                    <li>FIFO (First In First Out) based</li>
+                    <li>Easy to implement and understand</li>
+                    <li>Can lead to high average waiting time (convoy effect)</li>
+                    <li>Not suitable for interactive systems</li>
+                </ul>
+                <p><strong>Formula:</strong></p>
+                <ul>
+                    <li>Waiting Time of first process = 0</li>
+                    <li>Waiting Time of next process = Waiting Time of previous + Burst Time of previous</li>
+                    <li>Turnaround Time = Waiting Time + Burst Time</li>
+                </ul>
+            </div>
+
+            <div class="input-section">
+                <h3>Enter Process Details</h3>
+                <form id="fcfsForm">
+                    <div class="form-group">
+                        <label for="processCount">Number of Processes:</label>
+                        <input type="number" id="processCount" name="processCount" min="1" max="10" value="3" required>
+                        <button type="button" class="btn calculate-btn" onclick="generateProcessInputs()">Generate Input Fields</button>
+                    </div>
+
+                    <div id="processInputs" class="process-inputs"></div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn calculate-btn">Calculate FCFS</button>
+                        <button type="button" class="btn reset-btn" onclick="resetFCFS()">Reset</button>
+                    </div>
+                </form>
+                <div id="error-message" class="error-message"></div>
+            </div>
+        </div>
+
+        <div id="resultsContainer" class="results-section">
+            <h3>Scheduling Results</h3>
+            <div id="results"></div>
+            <div class="gantt-container">
+                <h3>Gantt Chart</h3>
+                <canvas id="ganttChart" width="800" height="300"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CPU Scheduling Algorithms. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/fcfs.js"></script>
+</body>
+</html>

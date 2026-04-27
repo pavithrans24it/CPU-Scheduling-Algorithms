@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priority Scheduling - CPU Scheduling Algorithms</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/algorithm.css">
+</head>
+<body>
+    <header>
+        <h1>CPU Scheduling Algorithms</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="fcfs.html">FCFS</a></li>
+                <li><a href="sjf.html">SJF</a></li>
+                <li><a href="priority.html">Priority Scheduling</a></li>
+                <li><a href="roundrobin.html">Round Robin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="algorithm-container">
+        <div class="algorithm-section">
+            <h2>Priority Scheduling</h2>
+            
+            <div class="explanation-box">
+                <h3>Algorithm Explanation</h3>
+                <p>Priority Scheduling executes processes based on their priority values. Each process is assigned a priority number, and the process with the highest priority is executed first.</p>
+                <p><strong>Key Characteristics:</strong></p>
+                <ul>
+                    <li>Processes are assigned priorities (lower number = higher priority)</li>
+                    <li>Can be preemptive or non-preemptive</li>
+                    <li>This implementation uses non-preemptive priority</li>
+                    <li>Provides flexibility in scheduling</li>
+                    <li>Can cause starvation of low-priority processes</li>
+                </ul>
+                <p><strong>Priority Scheme:</strong></p>
+                <ul>
+                    <li>Lower priority number = Higher priority (e.g., 1 is highest priority)</li>
+                    <li>If two processes have the same priority, FCFS is applied</li>
+                </ul>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Flexible scheduling based on importance</li>
+                    <li>Real-time systems compatibility</li>
+                </ul>
+                <p><strong>Disadvantages:</strong></p>
+                <ul>
+                    <li>Starvation of low-priority processes</li>
+                    <li>Context switching overhead</li>
+                </ul>
+            </div>
+
+            <div class="input-section">
+                <h3>Enter Process Details</h3>
+                <form id="priorityForm">
+                    <div class="form-group">
+                        <label for="processCount">Number of Processes:</label>
+                        <input type="number" id="processCount" name="processCount" min="1" max="10" value="3" required>
+                        <button type="button" class="btn calculate-btn" onclick="generateProcessInputsPriority()">Generate Input Fields</button>
+                    </div>
+
+                    <div id="processInputs" class="process-inputs"></div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn calculate-btn">Calculate Priority Scheduling</button>
+                        <button type="button" class="btn reset-btn" onclick="resetPriority()">Reset</button>
+                    </div>
+                </form>
+                <div id="error-message" class="error-message"></div>
+            </div>
+        </div>
+
+        <div id="resultsContainer" class="results-section">
+            <h3>Scheduling Results</h3>
+            <div id="results"></div>
+            <div class="gantt-container">
+                <h3>Gantt Chart</h3>
+                <canvas id="ganttChart" width="800" height="300"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CPU Scheduling Algorithms. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/priority.js"></script>
+</body>
+</html>

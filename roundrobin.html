@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round Robin - CPU Scheduling Algorithms</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/algorithm.css">
+</head>
+<body>
+    <header>
+        <h1>CPU Scheduling Algorithms</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="fcfs.html">FCFS</a></li>
+                <li><a href="sjf.html">SJF</a></li>
+                <li><a href="priority.html">Priority Scheduling</a></li>
+                <li><a href="roundrobin.html">Round Robin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="algorithm-container">
+        <div class="algorithm-section">
+            <h2>Round Robin (RR) Scheduling</h2>
+            
+            <div class="explanation-box">
+                <h3>Algorithm Explanation</h3>
+                <p>Round Robin is a CPU scheduling algorithm where each process is assigned a fixed time quantum (time slice). Processes are executed in a circular queue, and if a process doesn't complete within its time quantum, it is moved to the back of the queue.</p>
+                <p><strong>Key Characteristics:</strong></p>
+                <ul>
+                    <li>Preemptive scheduling algorithm</li>
+                    <li>Each process gets a fixed time quantum</li>
+                    <li>Fair CPU allocation among all processes</li>
+                    <li>Context switching overhead</li>
+                    <li>Good for interactive systems</li>
+                </ul>
+                <p><strong>Key Parameters:</strong></p>
+                <ul>
+                    <li>Time Quantum: Fixed time slice for each process (typically 10-100 ms)</li>
+                    <li>If process completes before quantum, next process starts immediately</li>
+                    <li>If process doesn't complete, it goes to back of queue</li>
+                </ul>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Fair distribution of CPU time</li>
+                    <li>Low response time</li>
+                    <li>Suitable for time-sharing systems</li>
+                </ul>
+                <p><strong>Disadvantages:</strong></p>
+                <ul>
+                    <li>Higher context switching overhead</li>
+                    <li>Average turnaround time can be high</li>
+                </ul>
+            </div>
+
+            <div class="input-section">
+                <h3>Enter Process Details</h3>
+                <form id="roundRobinForm">
+                    <div class="form-group">
+                        <label for="processCount">Number of Processes:</label>
+                        <input type="number" id="processCount" name="processCount" min="1" max="10" value="3" required>
+                        <button type="button" class="btn calculate-btn" onclick="generateProcessInputsRR()">Generate Input Fields</button>
+                    </div>
+
+                    <div id="processInputs" class="process-inputs"></div>
+
+                    <div class="form-group">
+                        <label for="quantum">Time Quantum:</label>
+                        <input type="number" id="quantum" name="quantum" min="1" value="4" required>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn calculate-btn">Calculate Round Robin</button>
+                        <button type="button" class="btn reset-btn" onclick="resetRR()">Reset</button>
+                    </div>
+                </form>
+                <div id="error-message" class="error-message"></div>
+            </div>
+        </div>
+
+        <div id="resultsContainer" class="results-section">
+            <h3>Scheduling Results</h3>
+            <div id="results"></div>
+            <div class="gantt-container">
+                <h3>Gantt Chart</h3>
+                <canvas id="ganttChart" width="800" height="300"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CPU Scheduling Algorithms. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/roundrobin.js"></script>
+</body>
+</html>

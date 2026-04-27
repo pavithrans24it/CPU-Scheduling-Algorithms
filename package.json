@@ -1,0 +1,20 @@
+{
+  "name": "cpu-scheduling-website",
+  "version": "1.0.0",
+  "description": "A website demonstrating various CPU scheduling algorithms including FCFS, SJF, Priority Scheduling, and Round Robin.",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server"
+  },
+  "keywords": [
+    "CPU Scheduling",
+    "Algorithms",
+    "Web Development"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

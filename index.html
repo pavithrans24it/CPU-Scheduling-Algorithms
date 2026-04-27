@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Algorithms</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>CPU Scheduling Algorithms</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/fcfs.html">FCFS</a></li>
+                <li><a href="pages/sjf.html">SJF</a></li>
+                <li><a href="pages/priority.html">Priority Scheduling</a></li>
+                <li><a href="pages/roundrobin.html">Round Robin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="home-hero">
+            <h2>Welcome to CPU Scheduling Algorithms</h2>
+            <p>This interactive educational website demonstrates various CPU scheduling algorithms used in operating systems. Learn how different scheduling strategies allocate CPU time to processes, and visualize how each algorithm works with interactive examples.</p>
+            <p><strong>Explore the algorithms</strong> below to understand their working principles, input your own process details, and see real-time Gantt charts showing the execution sequence.</p>
+        </div>
+
+        <div class="algorithm-list">
+            <div class="algorithm-card">
+                <h3>First Come First Serve (FCFS)</h3>
+                <p>The simplest scheduling algorithm where processes are executed in the order they arrive. Non-preemptive and easy to implement, but can lead to poor average waiting time.</p>
+                <p><strong>Use Cases:</strong> Batch processing systems, simple scheduling needs</p>
+                <a href="pages/fcfs.html">Explore FCFS →</a>
+            </div>
+
+            <div class="algorithm-card">
+                <h3>Shortest Job First (SJF)</h3>
+                <p>Executes the process with the smallest burst time next. Minimizes average waiting time and is optimal, but requires knowing burst times in advance.</p>
+                <p><strong>Use Cases:</strong> Batch systems, offline scheduling</p>
+                <a href="pages/sjf.html">Explore SJF →</a>
+            </div>
+
+            <div class="algorithm-card">
+                <h3>Priority Scheduling</h3>
+                <p>Processes are assigned priorities, and the highest priority process runs next. Flexible scheduling based on importance, but can starve low-priority processes.</p>
+                <p><strong>Use Cases:</strong> Real-time systems, mixed workloads</p>
+                <a href="pages/priority.html">Explore Priority →</a>
+            </div>
+
+            <div class="algorithm-card">
+                <h3>Round Robin (RR)</h3>
+                <p>Each process gets a fixed time quantum. Preemptive scheduling that provides fair CPU allocation and low response time for interactive systems.</p>
+                <p><strong>Use Cases:</strong> Time-sharing systems, interactive applications</p>
+                <a href="pages/roundrobin.html">Explore Round Robin →</a>
+            </div>
+        </div>
+
+        <div class="algorithm-section">
+            <h2>About This Website</h2>
+            <p>This educational platform provides interactive demonstrations of CPU scheduling algorithms. Each algorithm page includes:</p>
+            <ul>
+                <li><strong>Algorithm Explanation:</strong> Detailed description of how the algorithm works</li>
+                <li><strong>Key Characteristics:</strong> Important properties and features</li>
+                <li><strong>Interactive Input:</strong> Enter your own process details</li>
+                <li><strong>Instant Calculations:</strong> See waiting times and turnaround times</li>
+                <li><strong>Gantt Chart:</strong> Visual representation of process execution</li>
+                <li><strong>Statistics:</strong> Average metrics for performance analysis</li>
+            </ul>
+            
+            <h3>How to Use</h3>
+            <ol>
+                <li>Select an algorithm from the navigation menu</li>
+                <li>Enter the number of processes</li>
+                <li>Fill in arrival times and burst times (and priority if applicable)</li>
+                <li>For Round Robin, specify the time quantum</li>
+                <li>Click "Calculate" to see the results</li>
+                <li>View the Gantt chart for visual representation</li>
+                <li>Compare statistics to understand algorithm efficiency</li>
+            </ol>
+
+            <h3>Key Terms</h3>
+            <ul>
+                <li><strong>Arrival Time:</strong> When the process enters the ready queue</li>
+                <li><strong>Burst Time:</strong> How long the process needs CPU time</li>
+                <li><strong>Waiting Time:</strong> Time spent in the ready queue waiting for CPU</li>
+                <li><strong>Turnaround Time:</strong> Total time from arrival to completion</li>
+                <li><strong>Priority:</strong> Relative importance of a process (lower number = higher priority)</li>
+                <li><strong>Time Quantum:</strong> Fixed time slice for each process in Round Robin</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CPU Scheduling Algorithms. All rights reserved.</p>
+    </footer>
+
+    <script src="js/utils.js"></script>
+</body>
+</html>
